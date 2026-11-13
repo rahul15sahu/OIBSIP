@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Studio | Landing Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #172554;
+            color: white;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        header h2 {
+            color: #60a5fa;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        .hero {
+            min-height: 75vh;
+            background: linear-gradient(120deg, #1e3a8a, #2563eb);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.2rem, 6vw, 4rem);
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            max-width: 600px;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #facc15;
+            color: #172554;
+            padding: 12px 25px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        section {
+            padding: 60px 8%;
+            text-align: center;
+        }
+
+        .services {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .service {
+            background: #eff6ff;
+            padding: 25px;
+            border-radius: 10px;
+            flex: 1 1 220px;
+            max-width: 320px;
+        }
+
+        footer {
+            background: #172554;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                gap: 12px;
+            }
+
+            nav a {
+                margin: 0 10px 0 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h2>Creative Studio</h2>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <h1>Build Your Digital Future</h1>
+            <p>
+                We create beautiful, modern and responsive digital
+                experiences that help ideas grow.
+            </p>
+            <a class="btn" href="#services">Explore Services</a>
+        </section>
+
+        <section id="services">
+            <h2>Our Services</h2>
+            <p>Simple solutions for your digital needs.</p>
+
+            <div class="services">
+                <article class="service">
+                    <h3>Web Design</h3>
+                    <p>Clean and attractive designs for modern websites.</p>
+                </article>
+
+                <article class="service">
+                    <h3>Development</h3>
+                    <p>Responsive websites built with modern technologies.</p>
+                </article>
+
+                <article class="service">
+                    <h3>Creative Ideas</h3>
+                    <p>Turning your ideas into meaningful digital experiences.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Let's Work Together</h2>
+            <p>Have a project in mind? We would love to hear from you.</p>
+            <p>Email: hello@example.com</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Creative Studio. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

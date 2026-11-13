@@ -1,0 +1,658 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Rahul Sahu - Backend Developer Portfolio">
+    <title>Rahul Sahu | Backend Developer</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #0b1120;
+            color: #e5e7eb;
+            line-height: 1.7;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .container {
+            width: 88%;
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        header {
+            background: #111c30;
+            padding: 18px 0;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            border-bottom: 1px solid #26354d;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo {
+            color: #38bdf8;
+            font-size: 23px;
+            font-weight: bold;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        nav a {
+            color: #e5e7eb;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #38bdf8;
+        }
+
+        .hero {
+            min-height: 570px;
+            display: flex;
+            align-items: center;
+            background:
+                radial-gradient(circle at 80% 30%, #164e6355, transparent 35%),
+                #0b1120;
+        }
+
+        .hero-content {
+            max-width: 760px;
+            padding: 80px 0;
+        }
+
+        .intro {
+            color: #38bdf8;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: clamp(38px, 7vw, 68px);
+            line-height: 1.15;
+            margin: 18px 0;
+            color: white;
+        }
+
+        .hero h1 span {
+            color: #38bdf8;
+        }
+
+        .hero p {
+            color: #b6c3d5;
+            font-size: 18px;
+            max-width: 650px;
+            margin-bottom: 28px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #38bdf8;
+            color: #07111f;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: bold;
+            margin: 5px 8px 5px 0;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #7dd3fc;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #38bdf8;
+            border: 1px solid #38bdf8;
+        }
+
+        .btn-outline:hover {
+            color: #07111f;
+            background: #38bdf8;
+        }
+
+        section {
+            padding: 75px 0;
+            scroll-margin-top: 75px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            color: white;
+            font-size: 32px;
+        }
+
+        .section-title p {
+            color: #94a3b8;
+            margin-top: 8px;
+        }
+
+        .about-card,
+        .card {
+            background: #111c30;
+            border: 1px solid #26354d;
+            border-radius: 12px;
+            padding: 28px;
+        }
+
+        .about-card p {
+            color: #cbd5e1;
+            margin-bottom: 15px;
+        }
+
+        .highlight {
+            color: #38bdf8;
+            font-weight: bold;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .card h3 {
+            color: #38bdf8;
+            margin-bottom: 15px;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill {
+            background: #1e304a;
+            border: 1px solid #334b68;
+            color: #dbeafe;
+            padding: 7px 12px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 22px;
+        }
+
+        .project-card {
+            background: #111c30;
+            border: 1px solid #26354d;
+            border-radius: 12px;
+            padding: 28px;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: #38bdf8;
+        }
+
+        .project-card h3 {
+            color: white;
+            font-size: 21px;
+            margin-bottom: 8px;
+        }
+
+        .project-tech {
+            color: #38bdf8;
+            font-size: 13px;
+            margin-bottom: 15px;
+        }
+
+        .project-card ul {
+            padding-left: 20px;
+            color: #cbd5e1;
+        }
+
+        .project-card li {
+            margin-bottom: 10px;
+        }
+
+        .timeline {
+            display: grid;
+            gap: 18px;
+        }
+
+        .timeline-item {
+            background: #111c30;
+            border-left: 4px solid #38bdf8;
+            padding: 22px;
+            border-radius: 8px;
+        }
+
+        .timeline-item h3 {
+            color: white;
+        }
+
+        .timeline-item p {
+            color: #b6c3d5;
+        }
+
+        .date {
+            color: #38bdf8 !important;
+            font-size: 14px;
+            margin: 5px 0;
+        }
+
+        .contact-card {
+            text-align: center;
+            background: #111c30;
+            border: 1px solid #26354d;
+            border-radius: 12px;
+            padding: 35px 20px;
+        }
+
+        .contact-card p {
+            margin: 12px 0;
+            color: #cbd5e1;
+        }
+
+        .contact-card a {
+            color: #38bdf8;
+            overflow-wrap: anywhere;
+        }
+
+        footer {
+            background: #070d18;
+            text-align: center;
+            padding: 22px;
+            color: #94a3b8;
+            border-top: 1px solid #26354d;
+        }
+
+        @media (max-width: 650px) {
+            .navbar {
+                justify-content: center;
+            }
+
+            nav {
+                justify-content: center;
+                gap: 12px;
+            }
+
+            nav a {
+                font-size: 13px;
+            }
+
+            .hero {
+                min-height: 480px;
+            }
+
+            section {
+                padding: 55px 0;
+            }
+
+            .container {
+                width: 92%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container navbar">
+            <a href="#home" class="logo">Rahul Sahu.</a>
+
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#education">Education</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- HOME SECTION -->
+        <section class="hero" id="home">
+            <div class="container hero-content">
+                <p class="intro">Hello, I'm Rahul Sahu</p>
+
+                <h1>
+                    Associate <span>Backend Developer</span>
+                </h1>
+
+                <p>
+                    Computer Science Engineering professional
+                    interested in building reliable backend systems,
+                    RESTful APIs, and database-driven applications using
+                    Java, Python, and SQL.
+                </p>
+
+                <a href="#projects" class="btn">Explore My Projects</a>
+                <a href="#contact" class="btn btn-outline">Contact Me</a>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section id="about">
+            <div class="container">
+                <div class="section-title">
+                    <h2>About Me</h2>
+                    <p>Get to know my background and interests</p>
+                </div>
+
+                <div class="about-card">
+                    <p>
+                        I am Rahul Sahu, a Computer Science Engineering graduate
+                         with hands-on backend development experience in building 
+                         RESTful APIs, database-driven applications, and client-server
+                        systems.
+                    </p>
+
+                    <p>
+                        My technical interests include backend development,
+                        API design and integration, relational databases,
+                        and reliable server-side systems. I work with
+                        programming languages such as
+                        <span class="highlight">Java, Python, C/C++ and SQL</span>.
+                    </p>
+
+                    <p>
+                        I am comfortable using Git, Linux, command-line
+                        interfaces, and VS Code. I value clean code,
+                        modular design, secure development practices,
+                        and continuously learning new technologies.
+                    </p>
+
+                    <p>
+                        My career objective is to contribute as an
+                        Associate Backend Developer and help build and
+                        maintain dependable backend services and APIs.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS SECTION -->
+        <section id="skills">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Technical Skills</h2>
+                    <p>Technologies and tools I work with</p>
+                </div>
+
+                <div class="skills-grid">
+
+                    <div class="card">
+                        <h3>Backend & Programming</h3>
+                        <div class="skill-list">
+                            <span class="skill">Java</span>
+                            <span class="skill">Python</span>
+                            <span class="skill">C</span>
+                            <span class="skill">C++</span>
+                            <span class="skill">SQL</span>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3>APIs & Architecture</h3>
+                        <div class="skill-list">
+                            <span class="skill">REST API Design</span>
+                            <span class="skill">API Consumption</span>
+                            <span class="skill">Client-Server Architecture</span>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3>Databases</h3>
+                        <div class="skill-list">
+                            <span class="skill">MySQL</span>
+                            <span class="skill">Relational Database Design</span>
+                            <span class="skill">Database Optimization</span>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3>Developer Tools</h3>
+                        <div class="skill-list">
+                            <span class="skill">Git</span>
+                            <span class="skill">Linux</span>
+                            <span class="skill">CLI</span>
+                            <span class="skill">VS Code</span>
+                            <span class="skill">HTML</span>
+                            <span class="skill">CSS</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="about-card" style="margin-top: 20px;">
+                    <p>
+                        <strong>Additional learning:</strong>
+                        Familiar with picking up additional backend
+                        frameworks and technology stacks as needed,
+                        including Django and Node.js/Express.js.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS SECTION -->
+        <section id="projects">
+            <div class="container">
+                <div class="section-title">
+                    <h2>My Projects</h2>
+                    <p>Some of the systems I have developed</p>
+                </div>
+
+                <div class="projects-grid">
+
+                    <article class="project-card">
+                        <h3>Chatbot AI</h3>
+                        <p class="project-tech">Python | REST API Design</p>
+
+                        <ul>
+                            <li>
+                                Designed and built a backend-driven AI
+                                chatbot in Python with modular query
+                                handling and response generation.
+                            </li>
+
+                            <li>
+                                Implemented retrieval-oriented,
+                                context-aware response logic.
+                            </li>
+
+                            <li>
+                                Separated input handling, processing
+                                logic, and output generation for
+                                maintainability.
+                            </li>
+                        </ul>
+                    </article>
+
+                    <article class="project-card">
+                        <h3>File Transfer System</h3>
+                        <p class="project-tech">
+                            Linux | C++ | TCP Sockets | CLI
+                        </p>
+
+                        <ul>
+                            <li>
+                                Built a client-server system using
+                                TCP socket programming in C++.
+                            </li>
+
+                            <li>
+                                Implemented authenticated GET/PUT
+                                operations for file transfer and
+                                listing between client and server.
+                            </li>
+
+                            <li>
+                                Added username/password authentication
+                                and server-side access control.
+                            </li>
+
+                            <li>
+                                Focused on reliable network communication
+                                and efficient command handling.
+                            </li>
+                        </ul>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- EDUCATION SECTION -->
+        <section id="education">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Education</h2>
+                    <p>My academic background</p>
+                </div>
+
+                <div class="timeline">
+
+                    <div class="timeline-item">
+                        <h3>ITER, SOA University</h3>
+                        <p class="date">November 2022 – May 2026</p>
+                        <p>
+                            Bachelor of Technology (B.Tech)
+                        </p>
+                        <p>
+                            Computer Science & Information Technology (CSIT)
+                        </p>
+                        <p>Bhubaneswar, Odisha</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <h3>Kendriya Vidyalaya No. 1, AFS KKD</h3>
+                        <p class="date">August 2020 – May 2022</p>
+                        <p>Senior Secondary Education (PCMB)</p>
+                        <p>Kharagpur, West Bengal</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CERTIFICATION SECTION -->
+        <section id="certification">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Certification</h2>
+                    <p>Professional learning and development</p>
+                </div>
+
+                <div class="card">
+                    <h3>Solution Architecture Job Simulation</h3>
+                    <p>AWS (Amazon Web Services)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ACTIVITIES SECTION -->
+        <section id="activities">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Co-Curricular Activities</h2>
+                    <p>Leadership and campus involvement</p>
+                </div>
+
+                <div class="projects-grid">
+
+                    <div class="card">
+                        <h3>SOA PROXIMA 2025</h3>
+                        <p>Student Coordinator</p>
+                    </div>
+
+                    <div class="card">
+                        <h3>ELYSIUM 2025</h3>
+                        <p>Student Coordinator</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Contact Me</h2>
+                    <p>Let's connect and discuss opportunities</p>
+                </div>
+
+                <div class="contact-card">
+                    <p>
+                        <strong>Phone:</strong>
+                        <a href="tel:+917679922082">+91 7679922082</a>
+                    </p>
+
+                    <p>
+                        <strong>Email:</strong>
+                        <a href="mailto:rabindrasahukgp@gmail.com">
+                            rabindrasahukgp@gmail.com
+                        </a>
+                    </p>
+
+                    <p>
+                        <strong>LinkedIn:</strong>
+                        <a href="https://www.linkedin.com/in/rahul-sahu"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            linkedin.com/in/rahul-sahu
+                        </a>
+                    </p>
+
+                    <a href="mailto:rabindrasahukgp@gmail.com" class="btn">
+                        Send Me an Email
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>
+            &copy; 2026 Rahul Sahu. All Rights Reserved.
+        </p>
+        <p>Designed and developed by Rahul Sahu.</p>
+    </footer>
+
+</body>
+</html>
